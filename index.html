@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d9e5f3">
+  <title>Caixa de Entrada — Arquivo 001</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="desktop-icons" aria-hidden="true">
+    <div class="desktop-icon"><span>🖥️</span>Meu Computador</div>
+    <div class="desktop-icon"><span>✉️</span>Correio</div>
+    <div class="desktop-icon"><span>📁</span>Documentos</div>
+    <div class="desktop-icon"><span>🗑️</span>Lixeira</div>
+  </div>
+
+  <header class="menubar">
+    <div class="menu-left"><span class="apple">✿</span><strong>Finder</strong><span>Arquivo</span><span>Editar</span><span>Visualizar</span><span>Janela</span><span>Ajuda</span></div>
+    <div class="menu-right"><span>◉</span><span id="clock">Seg 14:32</span></div>
+  </header>
+
+  <main class="screen">
+    <section class="window welcome-window" id="welcome-window">
+      <div class="titlebar"><span class="traffic"><i></i><i></i><i></i></span><span>Mensagem nova</span><span class="window-mark">◧</span></div>
+      <div class="window-body welcome-body">
+        <div class="mail-icon">✉</div>
+        <h1>Você recebeu uma mensagem.</h1>
+        <p>Existe um pequeno arquivo esperando para ser aberto.</p>
+        <button id="open-mail" class="classic-button" type="button">Abrir Correio</button>
+        <p class="microcopy">ARQUIVO 001 · ACESSO RESTRITO</p>
+      </div>
+    </section>
+
+    <section class="window inbox-window hidden" id="inbox-window">
+      <div class="titlebar"><span class="traffic"><i></i><i></i><i></i></span><span>Caixa de Entrada</span><button class="close-window" id="close-mail" aria-label="Fechar">×</button></div>
+      <div class="mail-toolbar"><span>✉ Receber</span><span>↩ Responder</span><span>↗ Encaminhar</span><span>▤ Arquivar</span></div>
+      <div class="mail-layout">
+        <aside class="mail-sidebar"><div class="side-item selected">▸ Entrada <b id="inbox-count">1</b></div><div class="side-item">▹ Enviados</div><div class="side-item">▹ Rascunhos</div><div class="side-item">▹ Arquivo</div></aside>
+        <div class="mail-content">
+          <div class="mail-meta"><span>De: <b>Sistema</b></span><span>Para: <b>Você</b></span><span>Assunto: <b id="mail-subject">Uma coisa para descobrir</b></span></div>
+          <div class="mail-message">
+            <p id="mail-intro">Oi. Se você chegou até aqui, talvez goste de descobrir as coisas por conta própria.</p>
+            <p id="mail-clue">A primeira pista está esperando por você. Pense com carinho — mas observe os detalhes.</p>
+            <div class="puzzle-card">
+              <div class="puzzle-heading"><span>📎</span><div><strong id="phase-label">Enigma 01</strong><small id="phase-subtitle">Uma pequena investigação</small></div></div>
+              <p id="question">Qual é a resposta para abrir a primeira mensagem?</p>
+              <form id="answer-form">
+                <label class="sr-only" for="answer">Sua resposta</label>
+                <input id="answer" autocomplete="off" placeholder="Digite sua resposta..." required>
+                <button class="classic-button" type="submit">Verificar</button>
+              </form>
+              <button class="hint-button" id="hint-button" type="button">Preciso de uma pista</button>
+              <p class="feedback" id="feedback" aria-live="polite"></p>
+            </div>
+            <div class="attachment hidden" id="attachment"><span class="attachment-icon">📄</span><div><strong id="reward-title">Mensagem desbloqueada</strong><small id="reward-text">Você encontrou uma lembrança.</small></div></div>
+            <button class="classic-button next-button hidden" id="next-phase">Abrir próxima mensagem →</button>
+          </div>
+        </div>
+      </div>
+      <footer class="statusbar"><span id="status-text">1 mensagem selecionada</span><span>Conectado · Arquivo local</span></footer>
+    </section>
+
+    <div class="dock" aria-label="Aplicativos"><span>◉</span><span>✉</span><span>📁</span><span>🌐</span><span>♥</span></div>
+    <p class="desktop-note">Há mensagens que só aparecem na hora certa.</p>
+  </main>
+  <script src="phases.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
